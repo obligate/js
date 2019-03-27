@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //===========================原型指向改变之前添加方法,方法访问报错========================================
+        // // 人的构造函数
+        // function Person(age){
+        //     this.age = age;
+        // }
+        // // 人的原型中添加方法
+        // Person.prototype.eat = function(){
+        //     console.log("人正在吃东西");
+        // };
+        // // 学生的构造函数
+        // function Student(sex){
+        //     this.sex = sex;
+        // }
+        // // 学生的原型中添加方法，先在原型中添加方法
+        // Student.prototype.sayHi = function(){
+        //     console.log("您好哦");
+        // };
+        // // 改变了原型对象的指向
+        // Student.prototype = new Person(10);
+        //
+        // var stu = new Student("男");
+        // stu.eat();
+        // stu.sayHi();
+
+
+
+        //=============================================原型指向改变之后添加方法，方法访问正常==================================
+        // 人的构造函数
+        // function Person(age){
+        //     this.age = age;
+        // }
+        // // 人的原型中添加方法
+        // Person.prototype.eat = function(){
+        //     console.log("人正在吃东西");
+        // };
+        // // 学生的构造函数
+        // function Student(sex){
+        //     this.sex = sex;
+        // }
+        //
+        // // 改变了原型对象的指向
+        // Student.prototype = new Person(10);
+        //
+        // // 学生的原型中添加方法，先在原型中添加方法
+        // Student.prototype.sayHi = function(){
+        //     console.log("您好哦");
+        // };
+        // var stu = new Student("男");
+        // stu.eat();
+        // stu.sayHi();
+        // console.dir(stu);
+
+        //===========================================================例子====================
+        // 如果原型指向改变了，那么就应该在原型改变指向之后添加原型方法
+        // function Person(age){
+        //     this.age = age;
+        // }
+        // Person.prototype.eat = function(){
+        //     console.log("人正在吃东西");
+        // };
+        // Person.prototype = {
+        //     sayHi:function(){
+        //         console.log("sayHi");
+        //     }
+        // };
+        //
+        // // Person.prototype.eat = function(){
+        // //     console.log("人正在吃东西");
+        // // };
+        // var per = new Person();
+        // per.eat();//此时报错，原因是因为指向改变之前添加的原型方法，可以把方法eat挪到改变之后
+
+        //=========================================实例对象的属性和原型对象中的属性重名问题=================================
+        // 实例对象访问这个属性，应该先从实例对象中找，找到了就直接用，找不到就去指向的原型对象中找，找到了就使用，找不到呢？
+        // 通过实例对象能否改变原型对象中的属性值？不能
+        // 就想改变原型对象中属性的值，怎么办？直接通过原型对象.属性=值;可以改变，例如：Person.prototype.sex = "嘎嘎";
+        // function Person(age,sex){
+        //     this.age = age;
+        //     this.sex = sex;
+        // }
+        // Person.prototype.sex = "女";
+        // var per = new Person(10, "男");
+        // console.log(per.sex);
+        // // 因为JS是一门动态类型的语言，对象没有什么，只要点了，那么这对象就有了这个东西，
+        // // 没有这个属性，只要对象.属性名字，对象就有这个属性了，但是该属性没有赋值，所以，结果是:undefined
+        // console.log(per.xxxxxxfff);
+
+
+
+
+        // ==================================一个神奇的原型链===================================
+        // 原型链： 实例对象和原型对象之间的关系，通过__proto__来联系
+
+    </script>
+</head>
+<body>
+    <div id ="dv"></div>
+    <script>
+        var divObj = document.getElementById("dv");
+        console.dir(divObj);
+        // divObj.__proto__ --->
+        // HTMLDivElement.prototype 的__proto__ --->
+        // HTMLElement.prototype的__proto__ --->
+        // Element.prototype 的__proto__ --->
+        // Node.prototype的__proto__ --->
+        // EventTarget.prototype的__proto__ --->
+        // Object.prototype没有__proto__,所以object.prototype中__proto__是null
+    </script>
+</body>
+</html>

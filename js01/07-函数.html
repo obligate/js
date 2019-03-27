@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /**
+         * 函数的定义
+         * function 函数名字(){
+         *    函数体
+         * }
+         *
+         * 函数的调用：
+         *  函数名();
+         *
+         *  函数一旦重名，后面会把前面的函数覆盖
+         *
+         *  函数参数：
+         *  形参  函数在定义的时候小括号里的变量叫形参
+         *  实参 函数在调用的时候小括号里传入的值叫实参
+         *  形参个数和实参个数可以不一致
+         *
+         *  函数的返回值: 在函数内部有return关键字，并且在return关键字后面有内容，这个内容被返回了
+         *  当函数调用之后，需要这个返回值，那么就定义变量接收即可。
+         *
+         *  如果一个函数中有return，那么这个函数就有返回值
+         *  如果一个函数中没有return，那么这个函数就没有返回值
+         *
+         *  如果一个函数中没有明确的返回值，那么调用的时候接受了，结果就是undefined
+         *  （没有明确的返回值：函数中没有return，函数中有return，但是return后面没有任何内容）
+         *  函数没有返回值，但是在调用的时候接收了，那么结果就是undefined
+         *  变量声明了，没有赋值，结果也是undefined
+         *
+         *  arguments,获取的是函数在调用的时候，传入了几个参数, 可以获取传入每个参数的值
+         *  定义一个函数，如果不确定用户是都传入了参数，或者说不知道用户传了几个参数，没办法就算，
+         *  但是如果在函数中知道了参数的个数，也知道了，每个参数的值，可以
+         *
+         *
+         *
+         *  命名函数，如果函数有名字，就是命名函数
+         *  匿名函数，如果函数没有名字，就是匿名函数
+         *  函数的另一种定义方式
+         *      函数表达式：
+         *      把一个函数给一个变量，此时形成了函数表达式
+         *       var 变量 = 匿名函数;
+         *       var f1 = function(){
+         *       };
+         *       如果是函数表达式，那么此时前面的变量中存储的就是一个函数，而这个变量就相当于是一个函数，就可以直接加小括号调用了
+         *        f1();
+         *        注意：函数表达式后面，赋值结束后，要加分号
+         *  函数定义：
+         *  1. 函数声明-函数定义
+         *  function 函数名(){
+         *      函数体
+         *  }
+         *  2. 函数表达式
+         *     var f1 = function(){
+         *       };
+         *  3. 函数的自调用，没有名字，调用，声明的同时，直接调用，这个是一次性的
+         *  ()();
+         * ( function(){
+         *   console.log("hello");
+         * } )();
+         *
+         *
+         * 函数是有数据类型的，数据类型： function 类型的
+         *
+         * 函数可以作为参数使用，如果一个函数作为参数，那么我们说这个参数（函数）可以叫回调函数
+         *  只要是看到一个函数作为参数使用了，那就是回调函数
+         *
+         *  function sayHi(fn){
+         *      console.log("sayHi in");
+         *      fn();// fn此时应该是一个函数
+         *  }
+         *  function suSay(){
+         *      console.log("susay");
+         *  }
+         *  sayHi(suSay);
+         *
+         *
+         *  结论： 函数是可以作为返回值使用的
+         *  function f1(){
+         *      console.log("f1 函数调用了");
+         *      return function(){
+         *          console.log("这是一个函数");
+         *      };
+         *  }
+         *  var ff = f1();  // 调用
+         *  ff();     // ff就是一个函数了
+         */
+
+        // function getSum(x, y) {
+        //     return x + y;
+        // }
+        //
+        // var result = getSum(10, 20);
+        // console.log(result);
+
+
+        //
+        // function f1(){
+        //     // console.log(arguments.length);
+        //     console.log(arguments);
+        // }
+        // f1(10,20);
+        // console.log(f1);// 函数名输出就是函数的代码
+        //
+        // // 函数表达式
+        // var f2 = function(){
+        //     console.log("哈哈");
+        // };
+        // // 匿名函数不能直接调用
+        // f2();
+
+        // // 函数声明
+        // function f1(){
+        //     console.log("声明f1x");
+        // }
+        // f1();
+        // function f1(){
+        //     console.log("申明f1xy");
+        // }
+        // f1();
+        //
+        // // 函数表达式
+        // var f2 = function(){
+        //     console.log("哈哈x");
+        // };
+        // f2();
+        // var f2 = function(){
+        //     console.log("哈哈xy");
+        // };
+        // f2();
+        //  //函数自调用
+        // (function(){ console.log("自调用x");})();
+        // (function(){ console.log("自调用xy");})();
+
+
+        function f1(){
+            console.log("我是函数");
+        }
+        // 函数是有数据类型的，数据类型： function 类型的
+        console.log(typeof f1);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /**
+         * 对象： 有属性和方法，特指的某个事物
+         * 对象： 一组无序属性的集合
+         *
+         * JSON格式的数据：一般都是成对的,是键值对
+         */
+
+        var obj ={
+            name:"小明"
+        };
+        // json 也是一个对象，数据都是成对的，一般json格式的数据无论是键还是值都是用双引号括起来的
+        var json ={
+            "name":"乔峰",
+            "age":"10",
+            "sex":"男"
+        };
+        // 遍历对象，是不能通过for循环遍历的,无序
+        // 可以通过for-in循环
+        // 对象中确实有这个属性可以使用 对象.属性名字 或者 对象[属性名字]
+        // 对象中没有这个属性，只能使用 对象[属性名字]，因为对象.属性名字代表添加了一个属性
+        for(var key in json){
+            console.log(key); // json对象中的属性的名字
+            console.log(json[key]); //只能用对象[属性名字]
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

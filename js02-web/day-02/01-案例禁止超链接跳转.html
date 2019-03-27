@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /**
+     *  回顾概念：
+     *  文档： document
+     *  元素：页面中所有的标签，元素-element，标签-元素-对象
+     *  节点：页面中所有的内容（标签，属性，文本（文字，换行，空格，回车）），Node
+     *  节点的属性：（可以使用标签节点.出来，可以使用属性节点.出来，文本节点.点出来
+     *   nodeType  节点的类型   1----标签 ，2-----属性，3----文本
+     *   nodeName  节点的名字：标签节点  -- 大写的标签名字， 属性节点--小写的属性名字， 文本节点 --- #text
+     *   nodeValue 节点的值，标签节点---- null，    属性节点 ----  属性值，  文本节点 --- 文本内容
+     *
+     *  根元素： html标签
+     */
+    // 点击超链接弹出对话框
+    // 阻止超链接的默认的跳转： return false
+</script>
+<!-- 第一种写法 -->
+<a href="http://www.baidu.com" onclick="alert('哎呀，我被点了');return false">百度</a>
+<br/>
+
+<!-- 第二种写法 -->
+<script>
+    function f1(){
+        alert("哇塞");
+        return false;
+    }
+</script>
+<a href="http://www.baidu.com" onclick="return f1()">百度</a>
+
+<!-- 第三种写法 -->
+
+<a href="http://www.baidu.com" id="ak" >百度</a>
+<script>
+    document.getElementById("ak").onclick = function(){
+        alert("嘎嘎");
+        return false;
+    };
+    document.getElementById("ak")
+</script>
+</body>
+</html>

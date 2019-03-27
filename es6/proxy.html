@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        /**
+         * Proxy 代理
+         *      扩展（增加）对象的一些功能
+         *      比如 Vue
+         *           Vue.config,keyCodes.a = 65
+         * 
+         * Proxy 作用： 
+         *          比如vue中拦截
+         *          预警，上报，扩展功能，统计，增加对象等等
+         *  
+         * Proxy是设计模式一种，代理模式
+         * 
+         * 
+         * 语法：
+         *    new Proxy(target, handler);
+         *    let obj = new Proxy(被代理的对象，对代理的对象做什么操作);
+         * 
+         *     handler:
+         *          {
+         *              set(){},
+         *              get(){},
+         *              apply()
+         *              ...
+         *            }
+         * 
+         * */
+
+        // ================================== 需求1 ==========================
+        // 需求，访问name的时候，给我添加一些warning
+
+        //  let obj = {
+        //      name:"Peter"
+        //  };
+
+        // //  console.log(obj.name);
+
+        // let newObj = new Proxy(obj,{
+        //     get(target,property){
+        //         // console.log(target,property);
+        //         //TODO
+        //         console.log(`您访问了${property}属性`);
+        //         return target[property];
+        //     }
+        // });
+
+        // console.log(newObj.name);
+        // console.log(newObj.age);
+
+
+        //=============================== 需求2==============================
+        // 实现一个，访问一个对象身上属性，默认不存在的时候给了undefined
+        // 希望如果不存在错误（警告)信息：
+
+        // let obj = {
+        //      name:"Peter"
+        //  };
+
+        // let newObj = new Proxy(obj,{
+        //     get(target,property){
+        //         if(property in target){
+        //             return target[property];
+        //         }else{
+        //             // throw new ReferenceError(`${property}属性不存在`);
+        //             console.log(`${property}属性不在此对象上`);
+        //             return '^_^';
+        //         }
+        //     }
+        // });
+
+        // console.log(newObj.name);
+        // console.log(newObj.age);
+
+
+        // ========================================= 需求3=========================
+        // 设置age属性的时候年龄,保证是整数，小于200岁
+        // let obj = new Proxy({},{
+        //     set(target,property,value){
+        //         // console.log(target,property,value);
+        //         if(property === 'age'){
+        //             if(!Number.isInteger(value)){
+        //                 throw new TypeError(`年龄必须为整数`);
+        //             }
+        //             if(value >200){
+        //                 throw new RangeError(`年龄超标了，必须小于200岁`);
+        //             }
+        //         }
+        //         target[property] = value;
+        //     }
+        // });
+        // obj.a=123;
+        // obj.name ='Peter';
+
+        // console.log(obj);
+
+        // obj.age = 13.5;
+        // obj.age= 201;
+
+
+        // =======================================  deleteProperty  &  has   ======================
+        //     let json = {
+        //         a:1,
+        //         b:2
+        //     };
+        //     let newJson = new Proxy(json,{
+        //         deleteProperty(target,property){
+        //             console.log(`您要删除${property}属性`);
+        //             //TODO
+        //             delete target[property];
+        //         },
+        //         has(target,property){
+        //             console.log(`判断是否存在，调用has方法`);
+        //             return property in target;
+        //         }
+        //     });
+
+        //    console.log('a' in newJson);
+        //     // delete newJson.a;
+        //     console.log(newJson);
+
+        // =========================================
+
+        function sum(a, b) {
+            return a + b;
+        }
+        let newSum = new Proxy(sum, {
+            apply(target,context,args) {
+            // console.log(target,context,args);
+            // console.log(...arguments);
+            return Reflect.apply(...arguments)**2;
+            }
+        });
+
+        console.log(newSum(2,3));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

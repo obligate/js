@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="显示效果" id="btn"/><br/>
+<input type="text" value=""/><br/>
+<input type="text" value=""/><br/>
+<input type="text" value=""/><br/>
+<input type="text" value=""/><br/>
+<input type="text" value=""/><br/>
+<script>
+    document.getElementById("btn").onclick = function () {
+        // document.getElementsByTagName("标签的名字"); 返回的是一个伪数组，
+        // 无论获取的是一个标签，还是多个标签，最终都是在数组中存储的，这行代码的返回值就是一个Node数组
+        var inputNodes  = document.getElementsByTagName("input");
+        // 循环遍历这个数组
+        for(var i=0;i<inputNodes.length;i++){
+            var node = inputNodes[i];
+            // 判断这个元素是不是文本框
+            if(node.type !== 'button'){
+                node.value = "其实，这是对的";
+            }
+        }
+    }
+</script>
+</body>
+</html>

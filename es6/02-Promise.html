@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+
+        // new Promise
+        let num = 10;
+        let promise = new Promise(function(resolve, reject){
+            if(num == 10){
+                resolve("成功");
+            }else{
+                reject("失败");
+            }
+        });
+    
+        promise.then(suc =>{
+            console.log(suc);
+        },err=>{
+            console.log(err);
+        }).catch( err =>{
+            console.log(err);
+        })
+    
+        // Promise.resolve
+
+        // let p1 = Promise.resolve("aa");
+        // // let p1 = new Promise(res => res("aa"));
+        // p1.then(suc => {
+        //     console.log(suc);
+        // });
+
+        // Promise.reject
+
+
+        // Promise.all([p1,p2,p3]);  
+        // 必须确保，所有的Promise对象，都是resolve状态，都是成功状态，才可以
+        let p1 = Promise.resolve("aa");
+        let p2 = Promise.reject("bb");
+        let p3 = Promise.resolve("cc");
+        // Promise.all([p1,p2,p3]).then(suc =>{
+        //     // console.log(suc);
+        //     let [ret1,ret2,ret3] = suc;
+        //     console.log(ret1,ret2,ret3);
+        // });
+        
+        // 只要有一个成功了就返回
+        Promise.race([p1,p2,p3]).then(suc =>{
+            console.log(suc);
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

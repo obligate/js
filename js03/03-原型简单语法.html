@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 不需要共享的数据写在构造函数中，需要共享的数据写在原型中
+        // 构造函数
+        function Student(name,age,sex){
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+        }
+
+        //==================prototype第一种写法=====================
+        // 所有的学生的身高188，体重55kg
+        // 所有学生每天吃一个10斤的西瓜
+        // 所有学生每天都要写500行代码
+        // 原型对象
+        // Student.prototype.height = "188";
+        // Student.prototype.weight = "55kg";
+        // Student.prototype.eat = function(){
+        //     console.log("吃一个10斤的西瓜");
+        // };
+        // Student.prototype.study = function(){
+        //     console.log("写500行代码");
+        // };
+
+        //====================prototype简单写法===============================
+        // 原型对象中的方法，是可以相互访问的
+        Student.prototype = {
+            // 手动修改构造器的指向
+            constructor:Student,
+            height: "188",
+            weight: "55kg",
+            study: function(){
+                console.log("吃一个10斤的西瓜");
+                this.eat();
+            },
+            eat: function(){
+                console.log("写500行代码");
+            }
+        };
+        //实例化对象，并初始化
+        var stu = new Student("晨光",20,"男");
+        // stu.eat();
+        stu.study();
+        console.dir(Student);
+        console.dir(stu);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

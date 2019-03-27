@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width:200px;
+            height: 150px;
+            background-color: green;
+            float:left;
+            margin-left: 10px;
+            border: 2px solid green;   /*加一个border，防止抖动*/
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<script>
+    var divObj = document.getElementsByTagName("div");
+    for(var i=0;i<divObj.length;i++){
+        divObj[i].onmouseover = function(){
+            this.style.border="2px solid red";
+        };
+        divObj[i].onmouseout = function(){
+            this.style.border="";
+        };
+    }
+</script>
+</body>
+</html>

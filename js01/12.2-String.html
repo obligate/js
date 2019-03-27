@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /**
+         * String 是一个对象，字符串可以看成是字符组成的数组，但是js中没有字符类型
+         * 字符是一个一个的，在别的语言中字符用一对单引号括起来
+         * 在js中字符串可以使用单引号也可以使用双引号
+         * 因为字符串可以看成是数组，所以，可以通过for循环进行遍历
+         *
+         * 字符串特性： 不可变性,字符串的值是不能改变
+         * 字符串可以通过索引访问字符串中的某个值
+         * 但是，是可以访问  --  读取   --- 只读
+         * 设置： 就是可以改变
+         * 字符串的值之所以看起来是改变的，那是因为指向改变了，并不是真的值改变了
+         *   var str = "hello";// 可以看成是一个字符数组
+         *    str[1]="W";//字符串的值是不能改变
+         *    console.log(str);
+         *    for(var i =0;i<str.length;i++){
+         *      console.log(str[i]);
+         *  }
+         *
+         *
+         *  string  ----> 字符串类型  --- 基本类型
+         *  String  ----> 字符串类型  --- 引用类型
+         *
+         *  字符串对象 String对象
+         *  js没有字符类型
+         *
+         *  字符串的常用属性
+         *  .length  字符的长度
+         *  .chartAt(索引)，返回值是指定索引位置的字符串，超出索引，结果是空字符串
+         *  .fromCharCode(数字值，可以是多个参数），返回的是ASCII码对应的值
+         *  .concat(字符串1，字符串2,...) 返回的是新的字符串
+         *  .indexOf(要找的字符串，从某个位置开始的索引),返回的是这个字符串的索引值，没找到则返回-1
+         *  .lastIndexOf(要找的字符串)，从后向前找，但是索引仍然是从左向右的方式，没找到则返回-1
+         *  .replace("原来的字符串","新的字符串"),用来替换字符串
+         *  .slice(开始的索引，结束的索引);// 从开始的索引的位置开始提取，到结束索引的前一个结束，没有结束的索引，并返回提取后的字符串
+         *  .split("要干掉的字符串",切割后留下的个数); 切割字符串
+         *  .substr(开始的位置,个数);返回的是截取后的新的字符串
+         *  .substring(开始的索引，结束的索引);返回截取后的字符串，不包含结束的索引的字符串
+         *  .toLocaleLowerCase() 转小写
+         *  .toLowerCase() 转小写
+         *  .toLocaleUpperCase()  转大写
+         *  .toUpperCase() 转大写
+         *  .trim() 干掉字符串两端的空格
+         *
+         */
+            // var str = "hello";// 可以看成是一个字符数组
+            // for(var i =0;i<str.length;i++){
+            //     console.log(str[i]);
+            // }
+
+
+            // 对象的方式来看待
+            // var str="猥琐";
+            // str="邪恶";// 重新赋值
+            // console.log(str);
+
+            // 字符串的值之所以看起来是改变的，那是因为指向改变了，并不是真的值改变了
+            // var str = "hello";// 可以看成是一个字符数组
+            // str[1]="W";//字符串的值是不能改变
+            // console.log(str);
+            // for(var i =0;i<str.length;i++){
+            //     console.log(str[i]);
+            // }
+
+
+            // string 方法
+        // var str = "whatareyounongshalei";
+        // var result = str.charAt(12);
+        // console.log(result);
+
+            // SOS
+        // var result =  String.fromCharCode(83,79,83);
+        // console.log(result);
+
+        // var str = "what"
+        // // console.log(str+"are you" + "no");
+        // var result = str.concat(" are you "," no ");
+        // console.log(result);
+
+        // var str = "小苏真的好猥好琐啊";
+        // var index = str.indexOf("好",5);
+        // console.log(index);
+
+
+        // var str = "hello amen";
+        // var index = str.lastIndexOf("e");
+        // console.log(index);
+
+        // var str = "小苏好帅哦，真的好勇敢哦";
+        // if(str.indexOf("小苏") != -1){
+        //     str = str.replace("小苏","小杨");
+        // }else
+        // {
+        //     console.log("不存在");
+        // }
+        // console.log(str);
+
+        // var str ="如果有一天我邪恶了，请记住，我曾经纯洁过"
+        // // 从索引5的位置开始提取，到索引为10的前一个结束，没有10，并返回提取后的字符串
+        // str = str.slice(5,10);
+        // console.log(str);
+
+        // var str ="乔峰|慕容|凤姐|梅超风";
+        // var arr = str.split("|",3);
+        // for(var i=0;i<arr.length;i++) {
+        //     console.log(arr[i]);
+        // }
+
+        // var str = "哈哈，小苏真的好帅呀";
+        // str = str.substr(5,5);
+        // console.log(str);
+
+        // var str = "哈哈，小苏真的好帅呀";
+        // str = str.substring(5,9);
+        // console.log(str);
+
+        // var str = "HELLO";
+        // // str = str.toLocaleLowerCase();
+        // str = str.toLowerCase();
+        // console.log(str);
+
+        // var str = "hello";
+        // str = str.toLocaleUpperCase();
+        // str = str.toUpperCase();
+        // console.log(str);
+
+        // var str = " 哦，这是一个 神奇的一天 "
+        // str = str.trim();
+        // console.log("====" + str + "=====")
+
+
+        // 找到这个字符串中所有的 o 出现的位置
+        var str2 = "hello wod odd ott fbo nhyo";
+        var index = 0;
+        var key = "o";
+        while((index = str2.indexOf(key,index))!=-1){
+            console.log(index);
+            index+=key.length;
+        }
+
+        // 找到这个字符串中每个字符串出现了多少次
+        var str3 = "whatOareYyouYnoshaHleiHoHmyHgod";
+        // 第一步，把所有的字母全部变成小写
+        str3= str3.toLocaleLowerCase();
+        // 第二步，创建一个空对象，目的： 把字母作为键，次数作为值
+        var obj = {};
+        // 第三步，遍历字符串，获取每个字母
+        for(var i=0;i<str3.length;i++){
+            // 判断obj这个对象中有没有这个字母（字母 -- 键)
+            var key = str3[i]; // 每个字母
+            if(obj[key]){ // 判断obj中有没有这个键
+                // 对象中有这个字母了
+                obj[key]++;
+            }else{
+                // 对象中没有这个字母，那么就把字母加到对象中，并且给这个字母一个出现的次数，默认1次
+                obj[key] = 1;
+            }
+        }
+        // 遍历对象，显示每个字母的次数
+        for(var key in obj){
+            console.log(key + "这个字母出现的次数" + obj[key])
+        }
+        // 创建新的对象 --- 空对象 -- 没有属性，也没有方法
+        // var obj = {
+        //     "sex":"男"
+        // };
+        // 我想知道这个obj对象中有没有sex这个属性
+        // 把对象["属性名字"] ---> 放在if的判断中即可---- 判断对象中有没有这个属性
+        // if的判断的结果是true，则有这个属性，否则没有这个属性
+        // if(obj["sex"]){
+        //     console.log("有");
+        // }else{
+        //     console.log("没有");
+        // }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

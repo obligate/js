@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        .cls {
+            width: 300px;
+            height: 200px;
+            background-color: yellow;
+            border: 2px solid red;
+        }
+        .dd {
+            width: 300px;
+            height: 200px;
+            background-color: yellow;
+            border: 2px solid red;
+        }
+
+        .cls1{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="修改样式" id="btn"/>
+<div  id="dv"></div>
+<script src="common.js"></script>
+<script>
+    // 设置 div 的样式
+    my$("btn").onclick = function () {
+        // my$("dv").style.width="300px";
+        // my$("dv").style.height="300px";
+        // my$("dv").style.backgroundColor="yellow";
+        // my$("dv").style.border="10px solid red";
+
+        // 在js 代码中DOM操作的时候，设置元素的样式，不用class关键字，应该使用className
+        my$("dv").className = "cls";
+    }
+</script>
+
+<br/>
+<br/>
+<br/>
+
+<input type="button" value="隐藏" id="btn1"/>
+<div  id="dv1" class="cls1"></div>
+<script>
+    // 点击按钮，通过类样式的方式设置div的显示和隐藏
+    my$("btn1").onclick = function () {
+        // console.log(my$("dv1").className);
+        if(my$("dv1").className !== "cls1"){
+            // 现在是显示的，应该隐藏
+            my$("dv1").className = "cls1";
+            this.value ="显示";
+        }else{
+            // 隐藏状态，立即显示
+            my$("dv1").className = "dd";
+            this.value="隐藏";
+        }
+    }
+</script>
+</body>
+</html>

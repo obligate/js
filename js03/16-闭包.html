@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //闭包
+        /**
+         * 闭包的概念，函数A中，有一个函数B，函数B中可以访问函数A中定义的变量或者是数据，此时形成了闭包（这句话暂时不严谨）
+         * 闭包的模式： 函数闭包，对象闭包
+         * 闭包的作用： 缓存数据，延长作用域链
+         * 闭包的优点和缺点： 缓存数据
+         * 闭包的应用：
+         */
+
+        // // 函数模式的闭包：在一个函数中有一个函数
+        // function f1(){
+        //     var num = 10;
+        //     // 函数声明
+        //     function f2(){
+        //         console.log(num);
+        //     }
+        //     f2();
+        // }
+        // f1();
+        //
+        // // 对象模式的闭包:函数中有一个对象
+        // function f3(){
+        //     var num = 10;
+        //     var obj = {
+        //         age:num
+        //     };
+        //     console.log(obj.age);
+        // }
+        // f3();
+
+        //===================
+        // function f1(){
+        //     var num = 10;
+        //     return function(){
+        //         console.log(num);
+        //         return num;
+        //     }
+        // }
+        // var ff = f1();
+        // var result = ff();
+        // console.log(result);
+
+        // function f2(){
+        //     var num = 20;
+        //     return {
+        //         age:num
+        //     }
+        // }
+        // var obj = f2();
+        // console.log(obj.age);
+
+
+        //=======================
+        // function f1(){
+        //     var num = 10;
+        //     num++;
+        //     return num;
+        // }
+        // console.log(f1());//11
+        // console.log(f1());//11
+        // console.log(f1());//11
+
+        // function f1() {
+        //     var num = 10;
+        //     return function () {
+        //         num++;
+        //         return num;
+        //     }
+        // }
+        // var ff = f1();
+        // console.log(ff());//11
+        // console.log(ff());//12
+        // console.log(ff());//13
+
+
+        //==============================闭包产生随机数===============
+        // 总结: 如果想要缓存数据，就把这个数据放在外层的函数和里层的函数的中间位置
+        // 闭包的作用：缓存数据，有优点也是缺陷，没有及时的释放
+        // 局部变量是在函数中，函数使用结束后，局部变量会被自动的释放
+        // 闭包后，里面的局部变量的使用，作用域链就会被延长
+        function showRandom(){
+            var num = parseInt(Math.random()*10 +1);
+            console.log(num);
+        }
+        showRandom();
+        showRandom();
+        showRandom();
+
+        // 闭包的方式，产生三个随机数，但是都是相同的
+        function f1(){
+            var num  = parseInt(Math.random()*10+1);
+            return function(){
+                console.log(num);
+            }
+        }
+        var ff = f1();
+        ff();
+        ff();
+        ff();
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

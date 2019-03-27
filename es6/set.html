@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // set 类似数组，但是里面不能有重复值
+        // 把 set 结构变成数据
+        // [...set]
+        // let set = new Set([])   存储数组
+        // set.add({a:1,b:2});
+        // new WeakSet({}) 存储对象,可以忽略
+        let setArr = new Set(['a', 'b', 'c']);
+        console.log(setArr);
+        console.log(setArr.size);
+        setArr.add('d').add('e').add('f'); // new set(['a', 'b', 'c']).add('d').add('e').add('f');
+        setArr.delete('a');
+        console.log(setArr.has('c'));
+
+        // value 和 key是相同的，set中没有key 
+        setArr.forEach((value, key) => {
+            console.log(value + "\t" + key);
+        })
+
+        for(let item of setArr){ // 默认返回的是value
+            console.log(item);
+        }
+        for(let item of setArr.values()){ 
+            console.log(item);
+        }
+
+        setArr.clear();
+
+        console.log(setArr);
+
+
+
+        let arr = ['a', 'b', 'c','a','c','e'];
+        let cArr = [...new Set(arr)];
+        console.log(cArr);
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

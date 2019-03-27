@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="没怀孕"/>
+<input type="button" value="没怀孕"/>
+<input type="button" value="没怀孕"/>
+<input type="button" value="没怀孕"/>
+<input type="button" value="没怀孕"/>
+
+<script>
+    var btnObjs = document.getElementsByTagName("input");
+    // 循环遍历所有的按钮
+    for (var i = 0; i < btnObjs.length; i++) {
+        // 为每个按钮都要注册点击事件
+        btnObjs[i].onclick = function () {  // 事件是在触发的时候执行
+            // 把所有的按钮的value值设置为默认值：没怀孕
+            for (var j = 0; j < btnObjs.length; j++) {
+                btnObjs[j].value = "没怀孕";
+            }
+            // 当前被点击的按钮设置为怀孕了
+            // btnObjs[i].value="怀孕了";  // 不能这么写，因为页面加载完毕，for循环结束了，此时的i=btnObjs.length了, 而事件是在触发的时候执行，此时变成了btnObjs[btnObjs.length].value，所以会出现undefined
+            this.value = "怀孕了";
+        };
+    }
+</script>
+
+</body>
+</html>

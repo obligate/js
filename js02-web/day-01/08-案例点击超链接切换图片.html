@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a id="ak" href="../images/01.jpg"><img src="../images/01-small.png" alt="" id="im"/></a>
+<script>
+    // 点击图片标签，设置图片标签的src 路径为超链接中大图的路径
+    document.getElementById("im").onclick = function(){
+        this.src = document.getElementById("ak").href;
+        return false; // 阻止a标签跳转
+    }
+</script>
+</body>
+</html>

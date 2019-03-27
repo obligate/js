@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        /**
+         * 1. 命名捕获
+         *      语法 (?<名字>)
+         *      /(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})/
+         * 
+         *  反向引用: 
+         *          \1  \2 $1   $2
+         *  反向引用命名捕获：
+         *        语法: \k<名字>
+         * /^(?<peter>welcome)-\k<peter>-\1$/
+         * welcome-welcome-welcome
+         * 
+         * 
+         *  替换
+         *     $<名字>
+         * 
+         * 
+         * 2. dotAll模式 s
+         *   之前 '.' 在正则里表示匹配任意东西，但是不包括 \n
+         *   let reg = /\w+/gims
+         * 
+         * 
+         * 
+         * 3. 标签函数
+         *    function fn(){
+         * }
+         *  fn() // 正常调用，就是普通函数
+         * 
+         * fn`aaa`   // 标签函数使用
+         *  
+         */
+        // let str = '2018-03-20';
+        // let reg = /(\d{4})-(\d{2})-(\d{2})/
+        // let dateArr = str.match(reg);
+        // let year = dateArr[1];
+        // let month = dateArr[2];
+        // let day = dateArr[3];
+        // console.log(year,month,day);
+
+        // ====================命名捕获================
+        // let str = '2018-03-20';
+        // let reg = /(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})/
+        // let {year,month,day} = str.match(reg).groups;
+        // console.log(year,month,day);
+
+        //=================反向引用================
+        // let str = "a-a";
+        // let str2 = "peter-peter";
+        // let str3 = "welcome-welcome"
+        // let reg = /^(?<peter>welcome)-\k<peter>$/;// /^(?<peter>welcome)-\1$/ 也可以使用\1
+
+        // console.log(reg.test(str));
+        // console.log(reg.test(str2));
+        // console.log(reg.test(str3));
+
+
+        // ===========================  替换 1 ==========================
+        // let str = '2018-03-20';
+        // let reg = /(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})/
+        // // 03/20/2018
+        // //    str = str.replace(reg,'$<year>/$<month>/$<day>');
+        // str = str.replace(reg, '$<day>/$<month>/$<year>');
+        // console.log(str);
+
+
+        // ========================= 替换2 ============================
+        // let str = '2018-03-20';
+        // let reg = /(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})/
+        // str = str.replace(reg, (...args) => {
+        //     // console.log(args);
+        //     let {
+        //         year,
+        //         month,
+        //         day
+        //     } = args[args.length - 1];
+        //     return `${day}/${month}/${year}`;
+        // })
+        // console.log(str);
+
+
+        //   ============================= dotAll 模式 =============
+        // 不同不包含\n
+        // let reg = /^\w+.\w+$/;
+        // let str = "welcome-51mmr";
+        // console.log(reg.test(str));
+
+         // 代表所用
+        // let reg = /^\w+.\w+$/s; //s表示.代表所有，或者/^\w+.\w+$/m  多行模式
+        // let str = "welcome\n51mmr";
+        // console.log(reg.test(str));
+
+
+        // ===================== 标签函数==================
+        function fn(args){
+            return args[0].toUpperCase();
+        }
+
+        console.log(fn`welcome`);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

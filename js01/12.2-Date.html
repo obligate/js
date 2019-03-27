@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./common.js"></script>
+    <script>
+        // // 创建实例对象
+        // var dt = new Date();
+        // // 当前服务器的时间
+        // console.log(dt);
+
+        //var dt = new Date("2018/07/04");
+        // var dt = new Date("2018-07-04");
+        // // 传入的时间
+        // console.log(dt);
+
+        // var dt = new Date(2018,07,04);
+        // // 传入的时间
+        // console.log(dt);
+
+        // 获取时间的对象
+        // var dt = Date.now(); //毫秒数
+        // console.log(dt);
+
+        // var dt = new Date();
+        // console.log(dt.getFullYear());
+        // console.log(dt.getMonth() + 1);// 从0开始，真实的月份是需要加1的
+        // console.log(dt.getDate());
+        // console.log(dt.getHours());
+        // console.log(dt.getMinutes());
+        // console.log(dt.getSeconds());
+        // console.log(dt.getDay());// 星期从0开始的，0代表的是星期天
+
+
+        // var dt = new Date();
+        // console.log(dt.toString());
+        // console.log(dt.toDateString());// 英文格式
+        // console.log(dt.toLocaleDateString());//数字格式
+        // console.log(dt.toTimeString()); // 小时分钟秒
+        // console.log(dt.toLocaleTimeString());// 小时分钟秒
+        //
+        // console.log(dt.valueOf());// 毫秒值
+
+
+        // 不支持HTML5的浏览器，可以用下面的这种方式
+        // +是一种特殊的写法，只适用于这个Date的对象
+        // var dt = +new Date();
+        // console.log(dt);
+
+
+        // 格式化后的指定格式的日期和时间----------封装一个函数, 提取到common.js中
+        // function getDate(dt){
+        //     // var dt = new Date(); // 创建日期的对象
+        //     var year = dt.getFullYear();
+        //     var month = dt.getMonth();
+        //     var day = dt.getDate();
+        //     var hour = dt.getHours();
+        //     var minute = dt.getMinutes();
+        //     var second = dt.getSeconds();
+        //     month = month<10?"0"+month :month;
+        //     day = day<10 ?"0"+day:day;
+        //     hour =hour<10?"0"+hour:hour;
+        //     minute=minute<10?"0"+minute:minute;
+        //     second=second<10?"0"+second:second;
+        //     return  year + "年" + month + "月" + day + "日 " + hour +":" + minute + ":" + second;
+        // }
+        console.log(getDate(new Date()));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

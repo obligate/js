@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="显示图片" id="btn"/>
+<img src="" alt="哈哈" id="im" title="嘎嘎"/>
+<!--需要放到元素的下面，防止报错-->
+<script>
+    <!-- 点击按钮显示图片,点击按钮的时候设置img标签的src属性有一个图片的路径-->
+    var btnObj = document.getElementById("btn");
+    btnObj.onclick = function(){
+        var imObj = document.getElementById("im");
+        imObj.src="../images/01.jpg";
+        imObj.height="300";
+        imObj.width="400";
+    }
+</script>
+</body>
+</html>

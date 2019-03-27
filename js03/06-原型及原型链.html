@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 构造函数
+        function Person(name,age){
+            this.name = name;
+            this.age = age;
+            this.eat = function(){
+                console.log("吃好吃的");
+            };
+        }
+        // 添加共享的属性
+        Person.prototype.sex ="男";
+        // 添加共享的方法
+        Person.prototype.sayHi = function(){
+            console.log("你好，你真帅");
+        };
+        var per = new Person("小明",20);
+        per.sayHi();
+        console.dir(per);
+        console.dir(Person);
+
+        // 实例对象中的__proto__原型指向的是构造函数中的原型
+        console.log(per.__proto__ == Person.prototype);
+        // 实例对象中的__proto__是原型，浏览器使用的
+        // 构造函数中的prototype是原型，程序员使用的
+
+
+        // 原型链： 是一种关系，实例对象和原型对象之间的关系，关系是通过原型(__proto__)来联系的
+    </script>
+</head>
+<body>
+
+</body>
+</html>

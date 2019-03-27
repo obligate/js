@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    
+    let [a1,b1,c1] = [12,5,6]
+    console.log(a1,b1,c1);
+    
+    let json = {
+        name:'peter',
+        age:18,
+        job:"it"
+    }
+    let {name,age,job:a} = json;
+
+    let [a2,b,c="默认值"] = [1,2];
+
+    console.log(name,age,job);
+    console.log(name,age,a);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

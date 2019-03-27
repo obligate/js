@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /**
+         *   Javascript 分三个部分
+         *   ECMAScript 标准：JS的基本的语法
+         *   DOM:Document Object Model -->文档对象模型  --  操作页面的元素
+         *   BOM:Browser Object Model --> 浏览器对象模型  -- 操作的是浏览器
+         *
+         *
+         *   DOM: 文档对象模型
+         *   文档： 把一个html文件看成是一个文档，由于万物皆对象，所以把这个文档看成是一个对象xml文件也可以看成是一个文档
+         *
+         *  HTML：展示信息，展示数据的
+         *  XML: 侧重于存储数据
+         *  html文件看成是一个文档，那么这个文档看成是一个对象，文档中的所有的标签都可以看成是一个对象
+         *
+         *  页面中的每个标签，都是一个元素（element），每个元素都可以看成是一个对象
+         *  标签可以嵌套，标签中有标签，元素中有元素
+         *
+         *  html页面中都有一个根标签 html   - 也叫根元素
+         *  页面中的有一个根元素（标签html），里面有很多元素（有很多的标签，有很多的对象）
+         *
+         *   文档：一个页面就是一个文档
+         *   元素(element)：页面中的所有的标签都是元素，元素可以看成对象
+         *   节点(node)：页面中所有的内容都是节点：标签，属性，文本
+         *
+         *    页面就是文档-document， 文档中根元素 -- html
+         *
+         *    由文档及文档中的所有的元素（标签）组成的一个树形结构图，叫树状图(DOM树）
+         *
+         *
+         *    点击操作：    -----------> 事件：就是一件事，有触发和响应，事件源
+         *    按钮被点击，弹出对话框
+         *    按钮   ----  事件源
+         *    点击   ----  事件名字
+         *    被点了  ---- 触发了
+         *    弹框了   ---- 响应
+         *
+         */
+
+    </script>
+</head>
+<body>
+    <!--html 代码中嵌入了js的代码，不方便后期的修改和维护，应该把js代码和html分离-->
+    <input type="button" value="弹出"  onclick="alert('我被点击了')"/>
+    <input type="button" value="显示效果" id="btn"/>
+    <script>
+        document.getElementById("btn").onclick = function(){
+            alert('哈哈，我又变帅了');
+        }
+    </script>
+</body>
+</html>

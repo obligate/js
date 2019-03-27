@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /**
+         * 数组： 一组有序的数据
+         * 数组的作用： 可以一次性存储多个数据
+         * 数据的定义：
+         * 1. 通过构造函数创建数组
+         * var 数组名  = new Array();
+         * 数组的名字如果直接输出，那么直接就可以把数组中的数据显示出来，如果没有数据，就看不到数据
+         *
+         * var 数组名 = new Array(长度);
+         * 如果数组中没有数据，但是有长度，数组中的每个值就是undefined
+         * 构造函数的方式创建数组的时候，如果在Array(一个数字)，表示的是数组的长度（数组元素的个数）
+         * 如果在Array(多个值); 这个数组中就有数据了，数组的长度就是这些数据的个数
+         *
+         * 2. 通过字面连的方式创建数组
+         * var 数组名 = []; // 空数组
+         *
+         * 无论是构造函数的方式，还是字面量的方式，定义的数组，如果有长度，那么默认是undefined
+         *
+         *
+         * js数组中存储的数据类型一定是一样的吗？类型可以不一样
+         * var arr=[10,"哈哈",true,null,undefined,new Object()];
+         *
+         * 数组的长度是不是可以改变呢？可以改变
+         * var arr=[];
+         * // 通过索引来设置数组中的元素的值
+         * arr[0] = 10;
+         * arr[1]= 20;
+         * console.log(arr.length);
+         */
+
+        // var arr = new Array();
+        // console.log(arr);
+
+        // 通过自面量的方式创建
+        // var arr = [];
+
+        // var arr1 = new Array(5);
+        // console.log(arr1);
+        // var arr2 = new Array(5,6,7,8);
+        // console.log(arr2);
+    </script>
+    <script>
+        /**
+         *
+         */
+
+        var arr = [10, 20, 30, 40, 50];
+        for (var i = 0; i < arr.length; i++) {
+            console.log(arr[i]);
+        }
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

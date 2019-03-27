@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function Person(sex, age){
+            this.sex = sex;
+            this.age = age;
+        }
+        // 通过原型来添加方法,解决数据共享，节省内存空间
+        Person.prototype.eat = function(){
+            console.log("我要吃大骨头炖榴莲");
+        };
+
+        var p1 = new Person("男", 20);
+        var p2 = new Person("女", 30);
+        console.log(p1 == p2);
+        console.log(p1.eat == p2.eat);
+        console.dir(p1);
+        console.dir(p2); // 实例对象
+        console.dir(Person);// 构造函数的名字
+        p1.__proto__.eat();
+        console.log(p1.__proto__ == Person.prototype);
+
+        /**
+         *  实例对象中有两个属性（这个两个属性是通过构造函数来获取的）,__proto__这个属性
+         *  构造函数中没有sex和age两个属性
+         *
+         *  实例对象中有个属性，__proto__，也是对象，叫原型，不是标准的属性，浏览器使用的
+         *  构造函数中有一个属性,prototype,也是对象，叫原型，是标准属性，程序员使用
+         *
+         *  原型    -->  __proto__或者是prototype,都是原型对象
+         *  原型的作用：共享数据，节省内存空间
+         *
+         *
+         *
+         *  02-原型-02.png
+         *  构造函数可以实例化对象
+         *  构造函数中有一个属性叫prototype,是构造函数的原型对象
+         *  构造函数的原型对象prototye中有一个constructor构造器，这个构造器指向的就是自己所在的原型对象所在的构造函数
+         *  实例对象的原型对象(__proto__）指向的是该构造函数的原型对象
+         *  构造函数的原型对象prototype中的方法是可以被实例对象直接访问的
+         *
+         *
+         *
+         */
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

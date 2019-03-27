@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /**
+         * 面向过程： 凡是都要亲力亲为，每件事的具体过程都要知道，注重的是过程
+         * 面向对象： 根据需求找对象，所有的事都用对象来做，注重的是结果
+         *
+         * js不是面向对象的语言，但是可以模拟面向对象的思想
+         * js是一门基于对象的语言：
+         *
+         * 创建对象的三种方式
+         * 1. 调用系统的构造函数创建对象
+         * var 变量名  = new Object(); // Object是系统的构造函数
+         *
+         * 2. 自定义构造函数创建对象（结合第一种和需求通过工厂模式创建对象）
+         * 如何获取该变量（对象）是不是属于什么类型的？
+         * 变量 instanceof  类型的名字
+         * 在当前对象的方法中，可以使用this关键字代表当前对象
+         *
+         * 3.字面量的方式创建对象
+         * 缺陷： 一次性的对象
+         *
+         * 点语法： 对象.名字 = 值; 对象.名字 = 函数;
+         * []语法: 对象["名字"] = 值; 对象["名字"] = 函数;
+         */
+
+        // =============================3.字面量的方式创建对象===========================================
+        // var obj  = new Object();
+        // var obj2 = new 自定义构造函数();
+        // var obj = {}; // 空对象
+        // // 添加属性
+        // obj.name ="小白";
+        // obj.age=10;
+        // obj.sayHi = function(){
+        //     console.log("我是:" + this.name);
+        // };
+        // obj.sayHi();
+        // 优化后的写法：
+        var obj2 = {
+            name:"晓明",
+            age:20,
+            sayHi:function(){
+                console.log("我是"+ this.name);
+            },
+            eat:function(){
+                console.log("吃了");
+            }
+        };
+        obj2.sayHi();
+        obj2.eat();
+        //=======================2.自定义构造函数创建对象========================================
+        // // 自定义构造函数创建对象，我要自己定义一个构造函数，自定义构造函数，创建对象
+        // // 函数和构造函数的区别： 名字是不是大写（首字母是大写）
+        // function Person(name,age){
+        //     this.name = name;
+        //     this.age = age;
+        //     this.sayHi = function(){
+        //         console.log("Person sayHi" + this.name);
+        //     };
+        // }
+        // // 自定义构造函数创建对象： 先自定义一个构造函数，创建对象
+        // //  var person = new Person("小芳",20);
+        // // 1. 在内存中开辟(申请一块空闲的空间)空间，存储创建的新的对象
+        // // 2. 把this设置为当前的对象
+        // // 3. 设置对象的属性和方法的值
+        // // 4. 把this这个对象返回
+        // var person = new Person("小芳",20);
+        // person.sayHi();
+        //
+        // console.log(person instanceof Person);
+
+        //============================1.2工厂方式创建对象=======================================
+        // function createObject(name,age) {
+        //     var obj = new Object();// 创建对象
+        //     obj.name = name;
+        //     obj.age= age;
+        //     obj.sayHi = function(){
+        //         console.log("您好" + this.name +" : "+ this.age)
+        //     };
+        //     return obj;
+        // }
+        //
+        // // 创建人的对象
+        // var per1 = createObject("小芳",20);
+        // per1.sayHi();
+        //
+        // var per2 = createObject("小红",30);
+        // per2.sayHi();
+
+        // // ======================第一种创建对象的方式，实例化对象======================
+        // var obj = new Object();
+        // // 对象有特征---属性和行为 --- 方法
+        // // 添加属性，对象.名字 = 值;
+        // obj.name = "小苏";
+        // obj.age = 38;
+        // obj.sex = "女";
+        // // 添加方法,对象.名字 = 函数;
+        // obj.eat = function () {
+        //     console.log("我喜欢吃");
+        // };
+        // obj.play = function () {
+        //     console.log("我喜欢玩");
+        // };
+        //
+        // console.log(obj.name);
+        // obj.eat();
+        // obj.play();
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
