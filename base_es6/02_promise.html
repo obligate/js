@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 第一种，创建Promise的方法
+        //  p = new Promise(function(resolve,reject){})  => new Promise((resolve,reject)=>{})
+        //  p.then(success=>{},error=>{})
+        let num = 10;
+        let promise_1 = new Promise((resolve, reject) => {
+            if (num === 10) {
+                return resolve('成功');
+            } else {
+                return reject('失败')
+            }
+        });
+        promise_1.then(success => {
+            console.log(success)
+        }, error => {
+            console.log(error)
+        })
+
+        // 第二种
+        let p1 = Promise.resolve('p1 ok')
+        // p1.then(success => console.log(success))
+
+        let p2 = Promise.reject('p2 fail')
+        let p3 = Promise.resolve('p3 ok')
+
+        // Promise.all([p1,p2,p3]).then(success =>{
+        //     console.log(success)
+        // }).catch(err=>{
+        //     console.log(err)
+        // })
+
+        Promise.race([p1,p2,p3]).then(success =>{
+            console.log(success)
+        })
+
+    
+    </script>
+</body>
+
+</html>

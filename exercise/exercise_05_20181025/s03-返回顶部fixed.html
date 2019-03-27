@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .pg_content {
+            height: 5000px;
+            background-color: aqua;
+        }
+
+        .gotop {
+            height: 100px;
+            width: 100px;
+            line-height: 100px;
+            text-align: center;
+            background-color: black;
+            color: white;
+            position: fixed;
+            right: 0;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="pg_content">正文</div>
+    <div id="gotop" class="gotop" onclick="goTop();">返回顶部</div>
+
+    <script>
+        function goTop() {
+            document.body.scrollTop = document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+
+</html>

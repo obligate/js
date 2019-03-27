@@ -1,0 +1,31 @@
+<!DOCTYPE  html>  高速浏览器用什么标准来解析当前页面
+html
+head
+    meta 编码，刷新，刷新跳转，X-UA-COMPATIBLE兼容性，keywords，description
+    title 当前页面显示的标题
+    link icon rel="stylesheet" 样式表
+    style
+    script src
+body 
+    1.块级标签 H系列（加大加粗),p标签(段落之间有间距),div（白板）,ul ol dl table，特点：占整行
+    2.行内标签 特点：有多少占多少,span标签（白板）,input系列,texteara select a img
+    input type="text" value="默认值"
+    input type="password" value="默认值"
+    input type="button" value="按钮显示的值"/>
+    input type="submit" value="提交" 结合form使用 form action="#" method="post" enctype="multipart/form-data"
+    input type="reset" value="重置"
+    input type="file" 文件上传
+    男 input type="radio" name="gender" value="1"
+    女 input type="radio" name="gender" value="2" checked="checked"
+    保密 input type="radio" name="gender" value="3"
+    台球 input type="checked" name="favor" value="1"
+    桌球 input type="checked" nma="favor"  value="2"; checked="checked"
+    蓝球 input type="checked" nma="favor"  value="3";
+    足球 input type="checked" nma="favor"  value="4";
+    texteara
+    select size="3" multiple="multiple"
+    option value="1" bj
+    option value="2" bj
+    option value="3" bj
+    option value="4" bj
+

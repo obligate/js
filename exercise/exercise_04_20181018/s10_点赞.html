@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .container{
+            border:1px solid red;
+            padding: 50px;
+        }
+        .item{
+            position: relative;
+            width:30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">
+            <span>赞</span>
+        </div>
+    </div>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+      $(".item").click(function(){
+          addFavor(this);
+      });
+
+      function addFavor(that){
+          var fontSize = 15;
+          var top = 0;
+          var right = 0;
+          var opacity = 1;
+
+          // 创建一个+1的span标签
+          var tag = document.createElement("span");
+          $(tag).text("+1");
+          $(tag).css("color","green");
+          $(tag).css("position","absolute");
+          $(tag).css("fontSize",fontSize + "px");
+          $(tag).css("top",top + "px");
+          $(tag).css("right",right + "px");
+          $(tag).css("opacity",opacity);
+          $(that).append(tag);
+          // 不断改变
+
+          var obj = setInterval(function(){
+            fontSize = fontSize + 10;
+            top = top -10;
+            right = top-10;
+            opacity = opacity - 0.1;
+           
+            $(tag).css("fontSize",fontSize + "px");
+            $(tag).css("top",top + "px");
+            $(tag).css("right",right + "px");
+            $(tag).css("opacity",opacity);
+
+            if(opacity<0){
+                clearInterval(obj);
+                $(tag).remove();
+            }
+          },40);
+
+      }
+    </script>
+</body>
+</html>

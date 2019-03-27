@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .hidden{
+        display:none;
+    }
+    .shadow{
+        position:fixed;
+        left:0;
+        top:0;
+        right:0;
+        bottom:0;
+        background-color: gray;
+        opacity: 0.6;
+        z-index:9;
+    }
+    .modal{
+        height: 400px;
+        width:500px;
+        position: fixed;
+        left:50%;
+        top:50%;
+        margin-left:-250px;
+        margin-top:-200px;
+        background-color:white;
+        z-index:10;
+    }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="button" value="添加" id="btnAdd">
+    </div>
+    <div class="shadow hidden"></div>
+    <div class="modal hidden">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="button" value="取消" id="btnCancel">
+        <input type="button" value="确定" id="btnConfirm">
+    </div>
+    <script>
+        (function(){
+            document.getElementById("btnAdd").onclick=function(){
+                document.getElementsByClassName("shadow")[0].classList.remove('hidden');
+                document.getElementsByClassName("modal")[0].classList.remove('hidden');
+            }
+            document.getElementById("btnCancel").addEventListener("click",function(){
+                document.getElementsByClassName("shadow")[0].classList.add('hidden');
+                document.getElementsByClassName("modal")[0].classList.add('hidden');
+            })
+        })();
+    </script>
+</body>
+</html>

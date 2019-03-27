@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>s8_hover结合布局</title>
+    <style>
+        .pg_header{
+            position: fixed;
+            top:0;
+            left:0;
+            right:0;
+            height: 48px;
+            line-height: 48px;
+            background-color: #2459a2;
+
+        }
+        .pg_content{
+            margin-top: 50px;
+        }
+        .w{
+            width: 980px;
+            margin:0 auto;
+        }
+        .pg_header .menu{
+            display: inline-block;
+            padding: 0 10px 0 10px;
+            color:white;
+        }
+        .pg_header .menu:hover{
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="pg_header">
+        <div class="w">
+            <a class="logo">LOGO</a>
+            <a class="menu">全部</a>
+            <a class="menu">42区</a>
+            <a class="menu">段子</a>
+            <a class="menu">1024</a>
+        </div>
+    </div>
+    <div class="pg_content">
+        <div class="w">a</div>
+    </div>
+</body>
+
+</html>
