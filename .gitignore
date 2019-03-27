@@ -37,3 +37,13 @@ logs
 npm-debug.log*
 pids
 *.pid
+
+#python
+venv/
+__pycache__
+*.py[cod]
+*.so
+*.egg
+*.egg-info
+dist
+build
